@@ -1,0 +1,252 @@
+
+    <div class="form-group">
+	      <label for="namasekolah">Sekolah asal:</label>
+	      <input type="text" class="form-control" id="namasekolah" placeholder="Ketik Sekolah asal" name="sklhasal" required>
+    </div>
+      	 <hr/ style="margin-top: 40px;">
+	 <div class="form-group">
+      	 	 <label for="namasekolah">Paket Bimbel:</label>
+      		 <div class="btn-group" role="group" aria-label="Basic example">
+		 		 <button type="button" onclick="paket('priv')" class="btn btn-info">Privat</button>
+		 		 <button type="button" onclick="paket('kelom')" class="btn btn-info">Kelompok</button>
+		 
+			 </div>
+			 <div id="privat" style="display: none; padding: 20px;">
+			 	<h3>privat</h3>
+			 		 <div class="row">
+    	              	<div class="col">
+					 	 	<label >Mapel:</label>
+				    	 <select name="Mapel1" class="custom-select mb-3">
+					      <option selected>Pilih Mapel</option>
+					      <option value="Matematika">Matematika</option>
+					      <option value="Bing">Bahasa Inggris</option>	
+					      <option value="IPA">IPA</option>
+					      <option value="IPS">IPS</option>	
+					      <option value="Kimia">Kimia</option>
+					      <option value="Fisika">Fisika</option>			     
+					    </select>	
+					    </div>
+					    <div class="col">
+						    <label >Jam mulai</label>							
+						    <input class="form-control" type="time" name="jamMU" value="13:45:00" id="example-time-input">					    	
+					    </div>
+					    <div class="col">					      
+						    <label >Jam akhir</label>							
+						    <input class="form-control" type="time" name="jamIR" value="13:45:00" id="example-time-input">							
+					     </div>
+					     <div class="col">
+					      
+					     </div>
+			     </div>	
+			      <div class="row">
+    	              	<div class="col">
+    	              		 <label >Hari :</label>							
+							   <select name="hari" class="custom-select mb-3">
+						      <option selected>Pilih Hari</option>
+						      <option value="Senin">Senin</option>
+						      <option value="Selasa">Selasa</option>	
+						      <option value="Rabu">Rabu</option>
+						      <option value="Kamis">Kamis</option>	
+						      <option value="Jumat">Jumat</option>
+						      <option value="Sabtu">Sabtu</option>	
+						      <option value="Minggu">Minggu</option>			     
+						    </select>	
+
+    	              	</div>
+    	                <div  class="col-6">
+    	                	<label >Hari yang di Pilih:</label>	
+    	                	  <input type="text" class="form-control" id="namasekolah" placeholder="Ketik Sekolah asal" name="sklhasal" required>
+    	              	</div>
+    	                <div class="col">										    	
+					    </div>
+					   
+    	          </div>
+    	            	
+						     
+    	            
+		 </div>
+			 <div   ng-app="myApp" ng-controller="myCtrl" id="kelompok" style="display: none; padding: 20px;">
+
+			 	<h3>kelompok</h3>
+			 	 <div class="row">
+    	              	<div class="col">
+					 			 <label >Jumlah Orang</label>					     
+						        <select name="jmlhorg" class="custom-select mb-3">
+							      <option selected>Pilih Jumlah</option>
+							      <option onclick="funcklompok('2org')" value="2">2</option>
+							      <option onclick="funcklompok('3org')" value="3">3</option>	  
+							    </select>	
+					    </div>
+					       <div class="col">
+								    	
+					       </div>
+					      <div class="col">
+					      					
+					      </div>
+					      <div class="col">
+					      	
+					      </div>
+			         </div>
+			         <div class="row" style="margin-top:10px; ">
+			         	<div class="col">
+			         		 	<label >Mapel:</label>
+					    	 <select name="Mapel2" class="custom-select mb-3" ng-model="mpelnya">
+						      <option selected>Pilih Mapel</option>
+						      <option value="Matematika">Matematika</option>
+						      <option value="Bing">Bahasa Inggris</option>	
+						      <option value="IPA">IPA</option>
+						      <option value="IPS">IPS</option>	
+						      <option value="Kimia">Kimia</option>
+						      <option value="Fisika">Fisika</option>			     
+						    </select>	
+			         	</div>
+    	              	<div class="col">
+    	              		 <label >Hari :</label>							
+							   <select  ng-model="day1" name="hari" id="hariles" class="custom-select mb-3" >
+						      <option selected>Pilih Hari</option>                                                                                                              
+						     <!-- <option onclick="pilihwaktu('Senin')" >Senin</option>
+						      <option onclick="pilihwaktu('Selasa')" >Selasa</option>	
+						      <option onclick="pilihwaktu('Rabu')" >Rabu</option>
+						      <option onclick="pilihwaktu('Kamis')" >Kamis</option>	
+						      <option onclick="pilihwaktu('Jumat')" >Jumat</option>
+						      <option onclick="pilihwaktu('Sabtu')" >Sabtu</option>	
+						      <option onclick="pilihwaktu('Minggu')" >Minggu</option>-->
+						        <option value="Senin" >Senin</option>
+						      <option  value="Selasa"  >Selasa</option>	
+						      <option  value="Rabu" >Rabu</option>
+						      <option onclick="pilihwaktu('Kamis')" >Kamis</option>	
+						      <option onclick="pilihwaktu('Jumat')" >Jumat</option>
+						      <option onclick="pilihwaktu('Sabtu')" >Sabtu</option>	
+						      <option onclick="pilihwaktu('Minggu')" >Minggu</option>			     
+						    </select>	
+
+    	              	</div>
+    	                <div  class="col">
+    	                	<!--<label >Hari yang di Pilih:</label>	
+    	                	  <input type="text" class="form-control" id="haripilihan" placeholder="Tentukan hari Les"   disabled readonly required>-->
+    	                	  	<label >Mulai</label>							
+						    <input class="form-control" type="time" value="13:45" id="example-time-input" ng-model="wkt1">	
+    	              	</div>
+    	                <div class="col">	
+    	                	 <label >Akhir</label>							
+						    <input class="form-control" type="time" name="jamakhir"  value="13:45" id="example-time-input">									    	
+					    </div>
+					   
+					    <div class="col">
+
+					    </div>
+					   
+    	          </div>	
+    	              <div class="form-group">
+    	              	<div class="row">
+    	              		   <div class="col-10">
+    	              		   		
+					    	<button ng-click="add()" type="button" class="btn btn-primary">Primary</button>	
+    	              		   </div>
+
+    	              	</div>
+			          <div class="row">
+			          	<div class="col-6">
+			         <div>
+			         	<table  class="table table-bordered table-sm">
+			         			<tr>
+									<th scope="col">hari</th>
+									<th scope="col">waktu</th>
+									<th scope="col">mapel</th>
+									<th scope="col">option</th>
+									
+								
+								</tr>
+								<tr ng-repeat="product in listProducts">
+							
+									<td>{{product.day1}}</td>
+									<td>{{product.wkt1}}</td>
+									<td>{{product.mpelnya}}</td>
+									<td>
+										
+										<button  ng-click="del(product.hari)">Batal</button>
+									</td>
+								</tr>
+			         	</table>
+			         </div>
+			         </div>
+			         </div>
+			     </div>
+
+
+			         <div id="div2org" style="display: none;" >
+			            	<div class="border border-primary" style="padding: 20px;">
+			         	  	<label >Nama peserta 2:</label>
+		       				 <input type="text" class="form-control input-sm" id="rr" placeholder="Ketik Nama" name="nama2" required>
+		       		        <div class="form-group">
+					               <label for="uname">Gender:</label>
+			  				       <div class="row">
+			    	            			<div class="col">
+		    	 	            			 <select id="gend3"  name="gen2" class="form-control input-sm">
+					               		  <option selected >Pilih Gender</option>
+					               		  <option value="Laki-laki">Laki - laki</option>
+					  			    		 <option value="Perempuan">Perempuan</option>
+								   		  </select>
+		    	 							</div>
+		    			 					<div class="col"></div>
+		    			 					<div class="col"></div>
+		    			 					<div class="col"></div>
+		    					    </div>		   						
+		 				    </div>
+		       				 	<label >Alamat:</label>
+		       				 <input type="text" class="form-control input-sm" id="gg" placeholder="Ketik Alamat" name="alamat2" required>
+		       				 <label >No Telp:</label>
+		       				 <input type="text" class="form-control input-sm" id="tt" placeholder="Ketik No Telp" name="notelp" required>
+		       				 <label >Nama Orang tua:</label>
+		       				 <input type="text" class="form-control input-sm" id="kk" placeholder="Ketik Nama Ortu" name="namaortu2" required>
+		       				 <label >No Telp Orang Tua:</label>
+		       				 <input type="text" class="form-control input-sm" id="tt" placeholder="Ketik No Telp Ortu" name="notelportu2" required>
+		       				 </div>
+			         </div>
+			         <div id="div3org" style="display: none; margin-top: 15px;" >
+			         	<div class="border border-primary" style="padding: 20px;">
+			         		<label >Nama peserta 3:</label>
+		       				 <input type="text" class="form-control input-sm" id="aa" placeholder="Ketik Nama" name="nama3" required>
+		       				      <div class="form-group">
+					               <label for="uname">Gender:</label>
+			  				       <div class="row">
+			    	            			<div class="col">
+		    	 	            			 <select id="gend3"  name="gen3" class="form-control input-sm">
+					               		  <option selected >Pilih Gender</option>
+					               		  <option value="Laki-laki">Laki - laki</option>
+					  			    		 <option value="Perempuan">Perempuan</option>
+								   		  </select>
+		    	 							</div>
+		    			 					<div class="col"></div>
+		    			 					<div class="col"></div>
+		    			 					<div class="col"></div>
+		    					    </div>		   						
+		 				    </div>
+		       				 	<label >Alamat:</label>
+		       				 <input type="text" class="form-control input-sm" id="ss" placeholder="Ketik Alamat" name="alamat3" required>
+		       				 <label >No Telp:</label>
+		       				 <input type="text" class="form-control input-sm" id="ss" placeholder="Ketik No Telp" name="telp3" required>
+		       				  <label >Nama Orang tua:</label>
+		       				 <input type="text" class="form-control input-sm" id="kk" placeholder="Ketik Nama Ortu" name="namaortu3" required>
+		       				 <label >No Telp Orang Tua:</label>
+		       				 <input type="text" class="form-control input-sm" id="tt" placeholder="Ketik No Telp Ortu" name="notelportu3" required>
+		       				</div>
+
+			         </div>
+			         <!----------------------DEFINITION SCEDULL LES PRIVAT------------------->
+			      
+
+
+
+              <div class="form-check form-check-inline">
+			  <input type="radio" class="form-check-input" id="materialInline1" name="inlineMaterialRadiosExample">
+			  <label class="form-check-label" for="materialInline1">Online</label>
+			</div>
+
+			<!-- Material inline 2 -->
+			<div class="form-check form-check-inline">
+			  <input type="radio" class="form-check-input" id="materialInline2" name="inlineMaterialRadiosExample">
+			  <label class="form-check-label" for="materialInline2">Offline</label>
+			</div>
+			 </div>
+		</div>
